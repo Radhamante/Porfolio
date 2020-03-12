@@ -1,0 +1,49 @@
+@media (max-width: 900px){
+    body{
+        overflow: visible;
+    }
+    .pages{
+        display: flex;
+        flex-direction: column-reverse
+    }
+    .homePage{
+        flex-direction: column
+    }
+    .pageLeft{
+        width: 100%
+    }
+    .pageRight{
+        width: 100%;
+        height: 50%;
+    }
+    .arrowBottom,.arrowTop,.arrowTopTxt,.arrowBottomTxt,.pageSeparator{
+        display: none;
+    }
+    .pageRightTxt{
+        padding: 30px 0px
+    }
+    .pageLeftWeel{
+        top: -100px;
+        left: calc( 50% - 100px)
+    }
+    .pageLeftOpenButton{
+        width: 115px;
+    }
+    nav{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        right: -100%;
+    }
+    #menu_label{
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+    .pageLeftTxt{
+        padding: 0
+    }
+    .pageRightBackgroundTxt{
+        top: -100px
+    }
+}

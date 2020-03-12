@@ -1,0 +1,505 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    font-family: poiret-one, sans-serif; 
+    height: 100vh;
+    overflow: hidden;
+}
+.pages{
+    display: flex;
+    height: 100%;
+}
+.transition{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    z-index: 4;
+}
+
+/******** navigation *********/
+
+nav{
+    position: absolute;
+    width: 35%;
+    height: 100%;
+    right: -35%;
+    background-color: white;
+    transition: 0.7s;
+    z-index: 2;
+    box-sizing: border-box;
+    border-left: 2px solid rgb(46, 46, 46);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center
+}
+nav > a, nav p{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    font-size: 40px;
+    font-weight: 100;
+    animation-play-state: paused;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+nav a::after,nav > p::after{
+    content: "";
+    width: 0%;
+    height: 1px;
+    background-color: black;
+    transition: 0.3s
+}
+nav a:hover::after,nav p:hover::after{
+    width: 40%
+}
+#menu_checkbox:checked ~ nav{
+    right: 0;
+    border-color: white
+}
+
+
+#menu_checkbox:checked ~ nav a{
+    animation-play-state: running;
+}
+.contact span{
+    font-size: 22px;
+    margin: 10px;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    top: calc(50% + 150px);
+    height: 0px;
+    overflow: hidden;
+    transition: 0.5s
+}
+.contact > span{
+    cursor: pointer;
+}
+.contact > input{
+    position: absolute;
+    right: -50%;
+}
+.contactMessage{
+    position: absolute;
+    font-size: 15px;
+    color: brown;
+    display: none;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+/***** nav button *****/
+
+.menu_button
+{
+    width: 39px;
+    overflow: hidden;
+    z-index: 3;
+}
+
+#menu_checkbox
+{
+    display: none;
+}
+
+#menu_label
+{
+    position: absolute;
+    display: block;
+    height: 29px;
+    cursor: pointer;
+    top: 30px;
+    right: 30px;
+}
+
+#menu_label:before, #menu_label:after, #menu_text_bar
+{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-radius: 2px
+}
+
+#menu_label:before, #menu_label:after
+{
+    content: '';
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) left;
+}
+
+#menu_label:before
+{
+    top: 0;
+}
+
+#menu_label:after
+{
+    top: 12px;
+}
+
+#menu_text_bar
+{
+    top: 24px;
+}
+
+#menu_text_bar:before
+{
+    content: 'MENU';
+    position: absolute;
+    top: 5px;
+    right: 0;
+    left: 0;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#menu_checkbox:checked + #menu_label:before
+{
+    left: -39px;
+}
+
+#menu_checkbox:checked + #menu_label:after
+{
+    left: 39px;
+}
+
+#menu_checkbox:checked + #menu_label #menu_text_bar:before
+{
+    animation: moveUpThenDown 0.8s ease 0.2s forwards, shakeWhileMovingUp 0.8s ease 0.2s forwards, shakeWhileMovingDown 0.2s ease 0.8s forwards;
+}
+
+@keyframes moveUpThenDown
+{
+    0%{ top:0; }
+    50%{ top:-27px;}
+    100%{ top:-14px; }
+}
+
+@keyframes shakeWhileMovingUp
+{
+    0%{ transform: rotateZ(0); }
+    25%{ transform:rotateZ(-10deg); }
+    50%{ transform:rotateZ(0deg); }
+    75%{ transform:rotateZ(10deg); }
+    100%{ transform:rotateZ(0); }
+}
+
+@keyframes shakeWhileMovingDown
+{
+    0%{ transform:rotateZ(0); }
+    80%{ transform:rotateZ(3deg); }
+    90%{ transform:rotateZ(-3deg); }
+    100%{ transform:rotateZ(0); }
+}
+
+/******* my animation *******/
+
+@keyframes moveBackgroundVertical {
+    from{
+        background-position: 0px 0%
+    }
+    to{
+        background-position: 0px 100%
+    }
+}
+
+@keyframes moveBackgroundhorizontal {
+    from{
+        background-position: 0% 0px
+    }
+    to{
+        background-position: 100% 0px
+    }
+}
+
+@keyframes moveHorizontal {
+    from{
+        transform: translateX(100px)
+    }
+    to{
+        transform: translateX(-50px)
+    }
+}
+@keyframes rotate360 {
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(360deg)
+    }
+}
+
+/****************** All page ***********************/
+
+.pageLeft{
+    display: flex;
+    position: relative;
+    width: 65%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.pageLeft::before{
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(rgba(255, 255, 255, 0), black);
+    opacity: 0.3;
+
+}
+
+.pageLeftTxt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    border: 5px solid white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 50px;
+}
+.pageLeftTxt h1{
+    font-size: 50px;
+    margin: 10px;
+}
+.pageLeftTxt h2{
+    margin: 10px;
+}
+
+.pageLeftOpenButton{
+    position: absolute;
+    bottom: 60px;
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.3s;
+    z-index: 1;
+    cursor: pointer;
+    text-decoration: none;
+    color: white
+}
+.pageLeftOpenButton:hover{
+    width: 115px;
+}
+.pageLeftOpenButton svg{
+    font-size: 30px;
+    margin: 7px
+}
+.pageLeftOpenButton p{
+    margin: 0;
+    font-size: 24px;
+    margin-top: 6px;
+    font-weight: 600
+}
+
+.pageLeftWeel{
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(100% - 90px);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px dashed white;
+    animation: rotate360 20s infinite linear ;
+}
+.st0{fill:none;stroke:#ffffff;stroke-width:2} 
+.st1{fill:none;stroke:#ffffff;stroke-width:13}
+
+/* svg line:nth-of-type(2){
+    transform: rotate(-30deg)
+}
+svg line:nth-of-type(3){
+    transform: rotate(-60deg)
+}
+svg line:nth-of-type(4){
+    transform: rotate(-90deg)
+}
+svg line:nth-of-type(5){
+    transform: rotate(-120deg)
+}
+svg line:nth-of-type(6){
+    transform: rotate(-150deg)
+}
+svg line:nth-of-type(7){
+    transform: rotate(-180deg)
+}
+svg line:nth-of-type(8){
+    transform: rotate(-210deg)
+}
+svg line:nth-of-type(9){
+    transform: rotate(-240deg)
+}
+svg line:nth-of-type(10){
+    transform: rotate(-270deg)
+}
+svg line:nth-of-type(11){
+    transform: rotate(-300deg)
+}
+svg line:nth-of-type(12){
+    transform: rotate(-330deg)
+} */
+
+
+.pageSeparator{
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background-color: white;
+    right: calc(35% + 10px);
+}
+.pageRight{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    height: 100%;
+    color: black;
+    overflow: hidden;
+}
+.pageRightTxt{
+    padding: 100px 0px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+.pageRightTxt h2{
+    animation-delay: 0.5s;
+}
+.pageRightTxt h3{
+    animation-delay: 0.9s;
+}
+.pageRightBackgroundTxt{
+    user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 170px;
+    width: max-content;
+    text-transform: uppercase;
+    position: absolute;
+    font-weight: 900;
+    top: 270px;
+    color: rgb(241, 241, 241);
+    animation: moveHorizontal 20s ease-in-out alternate infinite;
+}
+.pageRightTxt h2{
+    font-size: 45px;
+    text-transform: uppercase;
+    margin: 5px
+}
+.arrowBottom{
+    z-index: 1;
+    position: absolute;
+    bottom: 25px;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    transform: rotate(-45deg);
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+.arrowBottomTxt{
+    position: absolute;
+    bottom: 40px;
+    cursor: pointer;
+    user-select: none;
+}
+.arrowTop{
+    z-index: 1;
+    position: absolute;
+    top: 25px;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    transform: rotate(135deg);
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+.arrowTopTxt{
+    position: absolute;
+    top: 40px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/************** MainPage ******************/
+
+.homepagePageLeftImg{
+    background-image: url(assets/HB-affiche_afterwork.jpg);
+    background-size: 100%;
+    background-position: center;
+    animation: moveBackgroundVertical 20s ease-in-out infinite alternate;
+}
+
+/************** project1 ******************/
+
+.project1{
+    display: none
+}
+.projet1PageLeftImg{
+    background-image: url(assets/intergrationHtml.jpg);
+    background-size: 100%;
+    background-position: center;
+    animation: moveBackgroundVertical 20s ease-in-out infinite alternate;
+}
+
+/************** project2 ******************/
+
+.project2{
+    display: none
+}
+.projet2PageLeftImg{
+    background-image: url(assets/Webgl.png);
+    background-size: auto 100%;
+    background-position: center;
+    animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate;
+}
+
+/************** project3 ******************/
+
+.project3{
+    display: none
+}
+.projet3PageLeftImg{
+    background-image: url(assets/platine.png);
+    background-size: auto 100%;
+    background-position: center;
+    animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate;
+}
+
+/************** project4 ******************/
+
+.project4{
+    display: none
+}
+.projet4PageLeftImg{
+    background-image: url(assets/Kwick.png);
+    background-size: auto 100%;
+    background-position: center;
+    animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate;
+}

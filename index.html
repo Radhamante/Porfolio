@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>Portfolio Raphael Delassus</title>
+    <link rel="stylesheet" href="https://use.typekit.net/upt6hqr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" integrity="sha256-PHcOkPmOshsMBC+vtJdVr5Mwb7r0LkSVJPlPrp/IMpU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+<body>
+    
+    <input type="checkbox" id="menu_checkbox" class="menu_button">
+    <label for="menu_checkbox" id="menu_label" class="menu_button">
+        <div id="menu_text_bar"></div>
+    </label>
+    <nav>
+        <a href="https://www.linkedin.com/in/raphael-delassus-742729185/">Linkedin</a>
+        <a href="https://github.com/Radhamante">GitHub</a>
+        <a href="https://www.behance.net/billydd">Behance</a>
+        <a href="assets/CV_Raphael_Delassus_alternance.pdf">CV</a>
+        <p onclick="displayContact()">Contacts</p>
+        <div class="contact">
+            <input type="text" value="raphael.delassus@efrei.net" id="email">
+            <span onclick="copyEmail()">raphael.delassus@efrei.net</span>
+            <input type="text" value="0651838622" id="password">
+            <span onclick="copyPass()">0651838622</span>
+            <p class="contactMessage" >copied</p>
+        </div>
+        
+        
+    </nav>
+    <section class="homePage pages">
+        <div class="pageLeft homepagePageLeftImg">
+            <div class="pageLeftTxt animated fadeInLeft">
+                <h1>Raphael Delassus</h1>
+                <h2>front-end developer</h2>
+            </div>
+            <div class="pageLeftWeel">
+                <svg id="clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                    <g class="st0">
+                        <!-- <path class="st1" d="M300.5 94V61M506 300.5h32M300.5 506v33M94 300.5H60M411.3 107.8l7.9-13.8M493 190.2l13-7.4M492.1 411.4l16.5 9.5M411 492.3l8.9 15.3M189 492.3l-9.2 15.9M107.7 411L93 419.5M107.5 189.3l-17.1-9.9M188.1 108.2l-9-15.6"/>
+                        <line x1="200" y1="200" x2="200" y2="210" style="stroke:rgb(255,0,0);stroke-width:8"/>
+                        <line x1="200" y1="200" x2="200" y2="210" style="stroke:rgb(255,0,0);stroke-width:8"/>
+                        <line x1="200" y1="200" x2="200" y2="210" style="stroke:rgb(255,0,0);stroke-width:8"/>
+                        <line x1="200" y1="200" x2="200" y2="210" style="stroke:rgb(255,0,0);stroke-width:8"/>
+                        <line x1="200" y1="200" x2="200" y2="210" style="stroke:rgb(255,0,0);stroke-width:8"/>
+                        <line x1="200" y1="200" x2="200" y2="210" style="stroke:rgb(255,0,0);stroke-width:8"/>
+                        <line x1="200" y1="200" x2="200" y2="210" style="stroke:rgb(255,0,0);stroke-width:8"/>
+                        <line x1="200" y1="200" x2="200" y2="210" style="stroke:rgb(255,0,0);stroke-width:8"/>
+                        <line x1="200" y1="200" x2="200" y2="210" style="stroke:rgb(255,0,0);stroke-width:8"/>
+                        <line x1="200" y1="200" x2="200" y2="210" style="stroke:rgb(255,0,0);stroke-width:8"/>
+                        <line x1="200" y1="200" x2="200" y2="210" style="stroke:rgb(255,0,0);stroke-width:8"/>
+                        <line x1="200" y1="200" x2="200" y2="210" style="stroke:rgb(255,0,0);stroke-width:8"/> -->
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="pageSeparator"></div>
+        <div class="pageRight">
+            <p class="pageRightBackgroundTxt animated fadeInUp">Projects</p>
+            <div class="pageRightTxt">
+                <h2 class="animated fadeIn">my projetcs</h2>
+                <h3 class="animated fadeIn ">Web Projects</h3>
+            </div>
+            <div class="arrowBottom toProj1" onclick="moveToProj1()">
+            </div>
+            <p class="animated fadeInDown arrowBottomTxt">TO PROJECTS</p>
+            <p class="animated fadeInUp arrowTopTxt" style="font-size: 30px;">WIP</p>
+        </div>
+    </section>
+
+    <section class="project1 pages">
+        <div class="pageLeft projet1PageLeftImg">
+            <a href="Projects/Model/index.html" class="pageLeftOpenButton animated fadeIn delay-1s">
+                <p>OPEN</p>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <div class="pageLeftWeel">
+            </div>
+        </div>
+        <div class="pageSeparator"></div>
+        <div class="pageRight">
+            <p class="pageRightBackgroundTxt">Model</p>
+            <div class="pageRightTxt">
+                <h2 class="animated fadeIn">Model</h2>
+                <h3 class="animated fadeIn">Développement Web</h3>
+            </div>
+            <div class="arrowTop toHomePage" onclick="moveToHomePage()"></div>
+            <p class="animated fadeInUp arrowTopTxt">TO HOMEPAGE</p>
+            <div class="arrowBottom toProj2" onclick="moveToProj2()"></div>
+            <p class="animated fadeInDown arrowBottomTxt">TO PROJECT 2</p>
+        </div>
+    </section>
+
+    <section class="project2 pages">
+        <div class="pageLeft projet2PageLeftImg">
+            <a href="Projects/Three/index.html" class="pageLeftOpenButton animated fadeIn delay-1s">
+                <p>OPEN</p>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <div class="pageLeftWeel">
+            </div>
+        </div>
+        <div class="pageSeparator"></div>
+        <div class="pageRight">
+            <p class="pageRightBackgroundTxt">Three.js</p>
+            <div class="pageRightTxt">
+                <h2 class="animated fadeIn">THREE.JS</h2>
+                <h3 class="animated fadeIn">3D Creation</h3>
+            </div>
+            <div class="arrowTop toHomePage" onclick="moveToProj1()"></div>
+            <p class="animated fadeInUp arrowTopTxt">TO PROJECT 1</p>
+            <div class="arrowBottom toProj2" onclick="moveToProj3()"></div>
+            <p class="animated fadeInDown arrowBottomTxt">TO PROJECT 3</p>
+        </div>
+    </section>
+
+    <section class="project3 pages">
+        <div class="pageLeft projet3PageLeftImg">
+            <a href="" class="pageLeftOpenButton animated fadeIn delay-1s">
+                <p>OPEN</p>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <div class="pageLeftWeel">
+            </div>
+        </div>
+        <div class="pageSeparator"></div>
+        <div class="pageRight">
+            <p class="pageRightBackgroundTxt">Leap motion</p>
+            <div class="pageRightTxt">
+                <h2 class="animated fadeIn">LEAP MOTION</h2>
+                <h3 class="animated fadeIn">Use your hands to make musics</h3>
+            </div>
+            <div class="arrowTop toHomePage" onclick="moveToProj2()"></div>
+            <p class="animated fadeInUp arrowTopTxt">TO PROJECT 2</p>
+            <div class="arrowBottom toProj2" onclick="moveToProj4()"></div>
+            <p class="animated fadeInDown arrowBottomTxt">TO PROJECT 4</p>
+        </div>
+    </section>
+
+    <section class="project4 pages">
+        <div class="pageLeft projet4PageLeftImg">
+            <a href="Projects/Kwick/index.html" class="pageLeftOpenButton animated fadeIn delay-1s">
+                <p>OPEN</p>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <div class="pageLeftWeel">
+            </div>
+        </div>
+        <div class="pageSeparator"></div>
+        <div class="pageRight">
+            <p class="pageRightBackgroundTxt">Kwick</p>
+            <div class="pageRightTxt">
+                <h2 class="animated fadeIn">KWICK</h2>
+                <h3 class="animated fadeIn">Easy chat</h3>
+            </div>
+            <div class="arrowTop toHomePage" onclick="moveToProj3()"></div>
+            <p class="animated fadeInUp arrowTopTxt">TO PROJECT 3</p>
+        </div>
+    </section>
+    <div class="transition">
+
+    </div>
+    <div class="transition"></div>
+    <script src="lib/all.min.js"></script>
+    <script src="transition.js"></script>
+</body>
+</html>

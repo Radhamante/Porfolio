@@ -13,13 +13,6 @@ body
     display: flex;
     height: 100%;
 }
-.transition{
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-    width: 100%;
-    z-index: 4;
-}
 
 .displayNone
 {

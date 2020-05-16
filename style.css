@@ -1,39 +1,66 @@
-body{
+
+
+body
+{
     padding: 0px;
     margin: 0px;
-    font-family: poiret-one, sans-serif; 
+    font-family: 'Poiret One', cursive;
     height: 100vh;
     overflow: hidden;
 }
-.pages{
+.pages
+{
     display: flex;
     height: 100%;
 }
 .transition{
     position: absolute;
     background-color: rgb(255, 255, 255);
+    height: 100%;
     width: 100%;
     z-index: 4;
 }
 
+.displayNone
+{
+    display: none
+}
+
+
+/****** lazy-load ********/
+
+.lazy-load
+{
+    opacity: 0;
+    transition: opacity 1s;
+    will-change: opacity
+}
+
+.lazy-load.loaded
+{
+    opacity: 1;
+}
+
 /******** navigation *********/
 
-nav{
+nav
+{
     position: absolute;
     width: 35%;
     height: 100%;
     right: -35%;
-    background-color: white;
+    background: white;
     transition: 0.7s;
     z-index: 2;
     box-sizing: border-box;
-    border-left: 2px solid rgb(46, 46, 46);
+    /* border-left: 1px solid rgb(83, 83, 83); */
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center
 }
-nav > a, nav p{
+nav > a, nav p
+{
     text-decoration: none;
     color: black;
     width: 100%;
@@ -46,31 +73,41 @@ nav > a, nav p{
     align-items: center;
     cursor: pointer;
 }
-nav a::after,nav > p::after{
+nav a::after,nav > p::after
+{
     content: "";
     width: 0%;
     height: 1px;
     background-color: black;
     transition: 0.3s
 }
-nav a:hover::after,nav p:hover::after{
+nav a:hover::after,nav p:hover::after
+{
     width: 40%
 }
-#menu_checkbox:checked ~ nav{
+#menu_checkbox:checked ~ nav
+{
     right: 0;
     border-color: white
 }
 
+#menu_checkbox:checked ~ section .pageRight > div
+{
+    transform: translate(-100%)
+}
 
-#menu_checkbox:checked ~ nav a{
+
+#menu_checkbox:checked ~ nav a
+{
     animation-play-state: running;
 }
-.contact span{
+.contact span
+{
     font-size: 22px;
     margin: 10px;
 }
-.contact{
-    display: flex;
+.contact
+{
     flex-direction: column;
     position: absolute;
     width: 100%;
@@ -78,16 +115,23 @@ nav a:hover::after,nav p:hover::after{
     top: calc(50% + 150px);
     height: 0px;
     overflow: hidden;
-    transition: 0.5s
+    transition: 0.5s;
+    margin-top: 13px
 }
-.contact > span{
+.contact > span
+{
     cursor: pointer;
 }
-.contact > input{
+.contact > input
+{
     position: absolute;
     right: -50%;
+    width: 1px;
+    overflow: hidden;
+    display: none;
 }
-.contactMessage{
+.contactMessage
+{
     position: absolute;
     font-size: 15px;
     color: brown;
@@ -207,25 +251,28 @@ nav a:hover::after,nav p:hover::after{
 
 /******* my animation *******/
 
-@keyframes moveBackgroundVertical {
+@keyframes moveBackgroundVertical 
+{
     from{
-        background-position: 0px 0%
+        top: 0
     }
     to{
-        background-position: 0px 100%
+        top: -100%
     }
 }
 
-@keyframes moveBackgroundhorizontal {
+@keyframes moveBackgroundhorizontal 
+{
     from{
-        background-position: 0% 0px
+        left: 0
     }
     to{
-        background-position: 100% 0px
+        left: 100%
     }
 }
 
-@keyframes moveHorizontal {
+@keyframes moveHorizontal 
+{
     from{
         transform: translateX(100px)
     }
@@ -233,7 +280,8 @@ nav a:hover::after,nav p:hover::after{
         transform: translateX(-50px)
     }
 }
-@keyframes rotate360 {
+@keyframes rotate360
+{
     from{
         transform: rotate(0deg)
     }
@@ -244,7 +292,8 @@ nav a:hover::after,nav p:hover::after{
 
 /****************** All page ***********************/
 
-.pageLeft{
+.pageLeft
+{
     display: flex;
     position: relative;
     width: 65%;
@@ -255,17 +304,19 @@ nav a:hover::after,nav p:hover::after{
     align-items: center;
     color: white;
 }
-.pageLeft::before{
+
+.pageLeft::before
+{
     content: "";
     position: absolute;
     width: 150%;
     height: 150%;
     background: radial-gradient(rgba(255, 255, 255, 0), black);
     opacity: 0.3;
-
 }
 
-.pageLeftTxt{
+.pageLeftTxt
+{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -274,21 +325,21 @@ nav a:hover::after,nav p:hover::after{
     background-color: rgba(0, 0, 0, 0.6);
     padding: 10px 50px;
 }
-.pageLeftTxt h1{
+.pageLeftTxt h1
+{
     font-size: 50px;
     margin: 10px;
+    text-align: center
 }
-.pageLeftTxt h2{
+.pageLeftTxt h2
+{
     margin: 10px;
 }
 
-.pageLeftOpenButton{
-    position: absolute;
-    bottom: 60px;
+.pageRightOpenButton
+{
     width: 40px;
-    height: 40px;
     border-radius: 25px;
-    border: 2px solid white;
     background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: flex-end;
@@ -298,104 +349,84 @@ nav a:hover::after,nav p:hover::after{
     z-index: 1;
     cursor: pointer;
     text-decoration: none;
+    color: white;
+    will-change: width;
+    animation-delay: 1.3s
+}
+
+.pageRightOpenButton:hover
+{
+    width: 105px;
+}
+.pageRightOpenButton img
+{
+    height: 25px;
+    margin: 7px;
     color: white
 }
-.pageLeftOpenButton:hover{
-    width: 115px;
-}
-.pageLeftOpenButton svg{
-    font-size: 30px;
-    margin: 7px
-}
-.pageLeftOpenButton p{
+.pageRightOpenButton p
+{
     margin: 0;
     font-size: 24px;
-    margin-top: 6px;
     font-weight: 600
 }
 
-.pageLeftWeel{
-    position: absolute;
-    top: calc(50% - 100px);
-    left: calc(100% - 90px);
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 4px dashed white;
-    animation: rotate360 20s infinite linear ;
-}
-.st0{fill:none;stroke:#ffffff;stroke-width:2} 
-.st1{fill:none;stroke:#ffffff;stroke-width:13}
-
-/* svg line:nth-of-type(2){
-    transform: rotate(-30deg)
-}
-svg line:nth-of-type(3){
-    transform: rotate(-60deg)
-}
-svg line:nth-of-type(4){
-    transform: rotate(-90deg)
-}
-svg line:nth-of-type(5){
-    transform: rotate(-120deg)
-}
-svg line:nth-of-type(6){
-    transform: rotate(-150deg)
-}
-svg line:nth-of-type(7){
-    transform: rotate(-180deg)
-}
-svg line:nth-of-type(8){
-    transform: rotate(-210deg)
-}
-svg line:nth-of-type(9){
-    transform: rotate(-240deg)
-}
-svg line:nth-of-type(10){
-    transform: rotate(-270deg)
-}
-svg line:nth-of-type(11){
-    transform: rotate(-300deg)
-}
-svg line:nth-of-type(12){
-    transform: rotate(-330deg)
-} */
-
-
-.pageSeparator{
+.pageSeparator
+{
     position: absolute;
     height: 100%;
     width: 3px;
-    background-color: white;
+    background: white;
     right: calc(35% + 10px);
 }
-.pageRight{
+.pageRight
+{
+    width: 35%;
+    height: 100%;
+    overflow: hidden;
+}
+.pageRight > div
+{
+    transition: transform 0.7s;
     display: flex;
     position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 35%;
+    width: 100%;
     height: 100%;
     color: black;
     overflow: hidden;
+    background: white;
 }
-.pageRightTxt{
-    padding: 100px 0px;
+
+.pageRightTxt
+{
+    padding: 80px 0px;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     z-index: 1;
+    line-height: 1.4em;
+    max-width: 70%;
+    transition: 0.3s
 }
-.pageRightTxt h2{
+.pageRightTxt h2
+{
     animation-delay: 0.5s;
+    line-height: 1.2em;
+    text-align: center;
 }
-.pageRightTxt h3{
+.pageRightTxt h3
+{
     animation-delay: 0.9s;
+    text-align: center;
 }
-.pageRightBackgroundTxt{
+.pageRightBackgroundTxt
+{
     user-select: none;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 170px;
@@ -407,12 +438,14 @@ svg line:nth-of-type(12){
     color: rgb(241, 241, 241);
     animation: moveHorizontal 20s ease-in-out alternate infinite;
 }
-.pageRightTxt h2{
+.pageRightTxt h2
+{
     font-size: 45px;
     text-transform: uppercase;
     margin: 5px
 }
-.arrowBottom{
+.arrowBottom
+{
     z-index: 1;
     position: absolute;
     bottom: 25px;
@@ -423,13 +456,17 @@ svg line:nth-of-type(12){
     width: 40px;
     cursor: pointer;
 }
-.arrowBottomTxt{
+.arrowBottomTxt
+{
     position: absolute;
     bottom: 40px;
     cursor: pointer;
     user-select: none;
+    text-transform: uppercase;
+    font-weight: 600
 }
-.arrowTop{
+.arrowTop
+{
     z-index: 1;
     position: absolute;
     top: 25px;
@@ -440,66 +477,77 @@ svg line:nth-of-type(12){
     width: 40px;
     cursor: pointer;
 }
-.arrowTopTxt{
+.arrowTopTxt
+{
     position: absolute;
     top: 40px;
     cursor: pointer;
     user-select: none;
+    text-transform: uppercase;
+    font-weight: 600
 }
 
 /************** MainPage ******************/
 
-.homepagePageLeftImg{
-    background-image: url(assets/HB-affiche_afterwork.jpg);
-    background-size: 100%;
-    background-position: center;
-    animation: moveBackgroundVertical 20s ease-in-out infinite alternate;
+.homepagePageLeftImg
+{
+    width: 65%;
+    height: 100%;
+    will-change: top;
+    /* animation: moveBackgroundVertical 20s ease-in-out infinite alternate; */
 }
 
 /************** project1 ******************/
 
-.project1{
-    display: none
-}
-.projet1PageLeftImg{
-    background-image: url(assets/intergrationHtml.jpg);
-    background-size: 100%;
-    background-position: center;
+
+.projet1PageLeftImg
+{
+    width: 100%;
+    height: min-content;
+    will-change: top;
     animation: moveBackgroundVertical 20s ease-in-out infinite alternate;
 }
 
 /************** project2 ******************/
 
-.project2{
-    display: none
-}
-.projet2PageLeftImg{
-    background-image: url(assets/Webgl.png);
-    background-size: auto 100%;
-    background-position: center;
+
+.projet2PageLeftImg
+{
+    height: 100%;
+    width: max-content;
+    will-change: left;
     animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate;
 }
 
 /************** project3 ******************/
 
-.project3{
-    display: none
-}
-.projet3PageLeftImg{
-    background-image: url(assets/platine.png);
-    background-size: auto 100%;
-    background-position: center;
+
+.projet3PageLeftImg
+{
+    height: 100%;
+    width: max-content;
+    will-change: left;
     animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate;
 }
 
 /************** project4 ******************/
 
-.project4{
-    display: none
+
+.projet4PageLeftImg
+{
+    height: 100%;
+    width: max-content;
+    will-change: left;
+    animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate;
 }
-.projet4PageLeftImg{
-    background-image: url(assets/Kwick.png);
-    background-size: auto 100%;
-    background-position: center;
+
+/************** project5 ******************/
+
+
+.projet5PageLeftImg
+{
+    height: 100%;
+    will-change: left;
+    width: max-content;
     animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate;
 }

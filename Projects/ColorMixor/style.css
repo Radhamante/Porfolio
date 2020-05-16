@@ -1,0 +1,130 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+#root{
+    margin: 0 10%;
+    height: 100vh;
+    overflow: hidden;
+}
+form{
+    width: 340px;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 calc(50% - 150px);
+    margin-top: 20px;
+    box-sizing: border-box
+}
+form span{
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+}
+form input{
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+.message{
+    position: absolute;
+    left: calc(50% + 200px);
+    height: max-content;
+    font-size: 14px;
+    margin: 0;
+    display: flex;
+    color: brown
+}
+.colorAndMixed{
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+    height: 80%;
+}
+.colorCtnr{
+    border-right: 1px solid black;
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    scrollbar-width: thin
+}
+.mixed{
+    height: max-content;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mixed h3{
+    text-transform: uppercase;
+    margin: 5px
+}
+.mixed div{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    flex-direction: column;
+    border: 3px solid lightblue;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.mixed p{
+    height: 50%;
+    width: 100%;
+    margin: 0;
+    
+}
+.mixed span{
+    display: flex;
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px
+}
+.oneColor{
+    display: flex;
+    width: 20%;
+    height: 120px;
+    border: 3px solid lightblue;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 2% 0;
+    margin-left: 10%;
+}
+.oneColor p{
+    height: 45%;
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid lightblue
+}
+.oneColor span{
+    display: flex;
+    width: 100%;
+    height: 35%;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px
+}
+.oneColor button{
+    height: 20%;
+    background-color: white;
+    border: none;
+    border-top: 2px solid lightblue;
+    transition: 0.2s;
+    text-transform: uppercase;
+    font-size: 10px
+}
+.oneColor button:hover{
+    background-color: lightpink;
+    color: brown;
+    
+}

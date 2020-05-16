@@ -1,3 +1,8 @@
+@media (max-width: 1237px){
+    .pageRightTxt{
+        padding: 40px 0
+    }
+}
 @media (max-width: 900px){
     body{
         overflow: visible;
@@ -45,5 +50,8 @@
     }
     .pageRightBackgroundTxt{
         top: -100px
+    }
+    .transition{
+        display: none
     }
 }

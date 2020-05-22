@@ -13,10 +13,11 @@
     }
     .pages{
         display: flex;
-        flex-direction: column-reverse
+        flex-direction: column
     }
     .homePage{
-        flex-direction: column
+        flex-direction: column;
+        border-bottom: 2px solid black
     }
     .pageLeft{
         width: 100%;
@@ -72,6 +73,15 @@
     }
     .transition{
         display: none
+    }
+    @media (orientation: landscape) {
+        nav > a, nav p{
+            font-size: 30px;
+            margin: 5px 0;
+        }
+        .pageRight{
+            height: 50%;
+        }
     }
 }
 @media (max-width: 650px){

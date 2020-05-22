@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c"> -->
+
     <meta name="description" content="Front-end developer living in Paris, Studing in Ecole Multimedia, Looking for alternance.">
 
     <meta itemprop="name" content="Raphael Delassus - Front-end developer">
     <meta itemprop="description" content="Front-end developer living in Paris, Studing in Ecole Multimedia, Looking for alternance.">
-    <meta itemprop="image" content="https://radhamante.xyz/assets/Webgl.png">
+    <meta itemprop="image" content="https://radhamante.xyz/media/share 1200x630.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Raphael Delassus - Front-end developer">
     <meta name="twitter:description" content="Front-end developer living in Paris, Studing in Ecole Multimedia, Looking for alternance.">
-    <meta name="twitter:image" content="https://radhamante.xyz/assets/Webgl.png">
+    <meta name="twitter:image" content="https://radhamante.xyz/media/share 1200x600.jpg">
 
     <meta property="og:site_name" content="Raphael Delassus - Portfolio">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://Radhamante.xyz">
     <meta property="og:title" content="Raphael Delassus - Front-end developer">
     <meta property="og:description" content="Front-end developer living in Paris, Studing in Ecole Multimedia, Looking for alternance.">
-    <meta property="og:image" content="https://radhamante.xyz/assets/Webgl.png">
+    <meta property="og:image" content="https://radhamante.xyz/media/share 1200x630.jpg">
 
     <meta name="theme-color" content="#CCCCCC">
 
@@ -45,14 +52,9 @@
         <a href="https://github.com/Radhamante" target="_blank">GitHub</a>
         <a href="https://www.behance.net/billydd" target="_blank">Behance</a>
         <a href="assets/CV_Raphael_Delassus_alternance.pdf" target="_blank">CV</a>
-        <p onclick="displayContact()">Mail</p>
-        <div class="contact">
-            <input type="text" value="raphael.delassus@efrei.net" id="email">
-            <span onclick="copyEmail()">raphael.delassus@efrei.net</span>
-            <p class="contactMessage" >copied</p>
-        </div>
-        
-        
+        <p class="copyMail">Mail</p>
+        <input type="text" value="raphael.delassus@efrei.net" id="email" class="displayNone">
+        <span class="contactMessage displayNone">Copied</span>
     </nav>
     <section class="homePage animated pages">
         <canvas class="webgl"></canvas>
@@ -60,13 +62,13 @@
             <h1>Raphael Delassus</h1>
             <h2>Front-end Developer</h2>
         </div>
-        <p class="animated fadeInDown arrowBottomTxt" onclick="scrollPage(1)">PROJECTS</p>
-        <div class="arrowBottom toProj1" onclick="scrollPage(1)"></div>
+        <p class="animated fadeInDown toBot arrowBottomTxt" >PROJECTS</p>
+        <div class="toBot arrowBottom" ></div>
     </section>
 
     <section class="project1 pages animated displayNone">
         <div class="pageLeft">
-            <img class="projet1PageLeftImg lazy-load" src="./assets/intergrationHtml.jpg" alt="Model HTML CSS">
+            <img class="PageLeftImg lazy-load" src="./assets/intergrationHtml.jpg" alt="Model HTML CSS">
         </div>
         <div class="pageSeparator"></div>
         <div class="pageRight">
@@ -80,17 +82,17 @@
                         <img src="assets/link-solid.svg" alt="link">
                     </a>
                 </div>
-                <div class="arrowTop toHomePage" onclick="scrollPage(-1)"></div>
-                <p class="animated fadeInUp arrowTopTxt" onclick="scrollPage(-1)">HOMEPAGE</p>
-                <div class="arrowBottom toProj2" onclick="scrollPage(1)"></div>
-                <p class="animated fadeInDown arrowBottomTxt" onclick="scrollPage(1)">3D Spaceship</p>
+                <div class="toTop arrowTop"></div>
+                <p class="animated fadeInUp toTop arrowTopTxt">HOMEPAGE</p>
+                <div class="toBot arrowBottom"></div>
+                <p class="animated fadeInDown toBot arrowBottomTxt" >3D Spaceship</p>
             </div>
         </div>
     </section>
 
     <section class="project2 pages animated displayNone">
         <div class="pageLeft">
-            <img class="projet2PageLeftImg lazy-load" src="./assets/Webgl.jpg" alt="3D Webgl Three.js">
+            <img class="PageLeftImg lazy-load" src="./assets/Webgl.jpg" alt="3D Webgl Three.js">
         </div>
         <div class="pageSeparator"></div>
         <div class="pageRight">
@@ -104,17 +106,17 @@
                         <img src="assets/link-solid.svg" alt="link">
                     </a>
                 </div>
-                <div class="arrowTop toHomePage" onclick="scrollPage(-1)"></div>
-                <p class="animated fadeInUp arrowTopTxt" onclick="scrollPage(-1)">Models</p>
-                <div class="arrowBottom toProj2" onclick="scrollPage(1)"></div>
-                <p class="animated fadeInDown arrowBottomTxt" onclick="scrollPage(1)">Leap Motion</p>
+                <div class="toTop arrowTop"></div>
+                <p class="animated fadeInUp toTop arrowTopTxt">Models</p>
+                <div class="toBot arrowBottom" ></div>
+                <p class="animated fadeInDown toBot arrowBottomTxt" >Leap Motion</p>
             </div>
         </div>
     </section>
 
     <section class="project3 pages animated displayNone">
         <div class="pageLeft">
-            <img class="projet3PageLeftImg lazy-load" src="./assets/platine.jpg" alt="3D cinema4D mix table">
+            <img class="PageLeftImg lazy-load" src="./assets/platine.jpg" alt="3D cinema4D mix table">
         </div>
         <div class="pageSeparator"></div>
         <div class="pageRight">
@@ -128,17 +130,17 @@
                         <img src="assets/link-solid.svg" alt="link">
                     </a>
                 </div>
-                <div class="arrowTop toHomePage" onclick="scrollPage(-1)"></div>
-                <p class="animated fadeInUp arrowTopTxt" onclick="scrollPage(-1)">3D Spaceship</p>
-                <div class="arrowBottom toProj2" onclick="scrollPage(1)"></div>
-                <p class="animated fadeInDown arrowBottomTxt" onclick="scrollPage(1)">Easy Chat</p>
+                <div class="toTop arrowTop"></div>
+                <p class="animated fadeInUp toTop arrowTopTxt">3D Spaceship</p>
+                <div class="toBot arrowBottom" ></div>
+                <p class="animated fadeInDown toBot arrowBottomTxt" >Easy Chat</p>
             </div>
         </div>
     </section>
 
     <section class="project4 pages animated displayNone">
         <div class="pageLeft">
-            <img class="projet4PageLeftImg lazy-load" src="./assets/Kwick.jpg" alt="Mockup Kwick Chat">
+            <img class="PageLeftImg lazy-load" src="./assets/Kwick.jpg" alt="Mockup Kwick Chat">
         </div>
         <div class="pageSeparator"></div>
         <div class="pageRight">
@@ -152,17 +154,17 @@
                         <img src="assets/link-solid.svg" alt="link">
                     </a>
                 </div>
-                <div class="arrowTop toHomePage" onclick="scrollPage(-1)"></div>
-                <p class="animated fadeInUp arrowTopTxt" onclick="scrollPage(-1)">Leap Motion</p>
-                <div class="arrowBottom toHomePage" onclick="scrollPage(1)"></div>
-                <p class="animated fadeInDown arrowBottomTxt" onclick="scrollPage(1)">React Color Mixor</p>
+                <div class="toTop arrowTop"></div>
+                <p class="animated fadeInUp toTop arrowTopTxt">Leap Motion</p>
+                <div class="toBot arrowBottom" ></div>
+                <p class="animated fadeInDown toBot arrowBottomTxt" >React Color Mixor</p>
             </div>
         </div>
     </section>
 
     <section class="project5 pages animated displayNone">
         <div class="pageLeft">
-            <img class="projet5PageLeftImg lazy-load" src="./assets/Color_Mixor.png" alt="Color_Mixor in React">
+            <img class="PageLeftImg lazy-load" src="./assets/Color_Mixor.png" alt="Color_Mixor in React">
         </div>
         <div class="pageSeparator"></div>
         <div class="pageRight">
@@ -176,8 +178,8 @@
                         <img src="assets/link-solid.svg" alt="link">
                     </a>
                 </div>
-                <div class="arrowTop toHomePage" onclick="scrollPage(-1)"></div>
-                <p class="animated fadeInUp arrowTopTxt" onclick="scrollPage(-1)">Easy Chat</p>
+                <div class="toTop arrowTop"></div>
+                <p class="animated fadeInUp toTop arrowTopTxt">Easy Chat</p>
             </div>
         </div>
     </section>
@@ -189,12 +191,15 @@
 
     TO DO :
 
-    - Pictures
-        + Homothétie
-        + Movement
-    - Responsive
-        + Change Menu Landscap Portable
-        + Size PageRight landscap
-    - Home pages
-
+    Ajouter plus d'objets dans WebGL
+    Amméliorer inertie du wheel
+    
+    (done) bug copie mail
+    (done) display none bouton menu
+    (done) bug Menu Landscap Portable
+    (done) taille text landscap
+    (done) Réduire contrast des ombres du WebGL
+    (done) Régler bug flèches
+    (done) Ajouter favicon
+    (done) Change Image d'Open Graph
  -->

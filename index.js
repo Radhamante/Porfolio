@@ -6,7 +6,6 @@ for(const element of lazyLoadEl)
 {
     if(element.complete)
     {
-        console.log("dans le cache")
         window.setTimeout(() => {
             element.classList.add('loaded')
         },Math.random() * 500)
@@ -14,7 +13,6 @@ for(const element of lazyLoadEl)
 
     element.onload = () => 
     {
-        console.log("loaded")
         window.setTimeout(() => {
             element.classList.add('loaded')
         },Math.random() * 500)
@@ -24,43 +22,30 @@ for(const element of lazyLoadEl)
 /* Contact Menu */
 
 
-const contact = document.getElementsByClassName("contact")[0]
-let contactDisplay = false
+const copyEmail = document.querySelector(".copyMail")
+const contactMessage = document.querySelector(".contactMessage");
+const email = document.querySelector("#email");
 
-const displayContact = () =>{
-    if (contactDisplay == false) {
-        contact.style.height = "50px"
-        contactDisplay = true
-    }else if(contactDisplay){
-        contact.style.height = "0px"
-        contactDisplay = false
-    }
-}
-
-let email = document.getElementById("email");
-
-function copyEmail() {
-    email.style.display = "flex"
+copyEmail.addEventListener("click", () => {
+    email.classList.remove("displayNone")
     email.select();
-    email.setSelectionRange(0, 99999)
+    email.setSelectionRange(0, 999)
     document.execCommand("copy");
-    showMessage(28,0)
-    email.style.display = "none"
-}
+    contactMessage.classList.remove("displayNone")
+    email.classList.add("displayNone")
+    setTimeout(() => {
+        contactMessage.classList.add("displayNone")
+    },5000)
+})
 
-const contactMessage = document.getElementsByClassName("contactMessage")[0];
 
-function showMessage(top,left) {
-    contactMessage.style.display = "flex"
-    contactMessage.style.top = top + "px"
-    contactMessage.style.left = left + "px"
-    setTimeout(()=>{
-        contactMessage.style.display = "none"
-    },3000)
-}
+
+
+
 
 
 /* scroll */
+
 
 const menu = document.querySelector('#menu_label')
 const menuCheckbox = document.getElementById('menu_checkbox')
@@ -85,7 +70,6 @@ window.addEventListener('wheel', (e) => {
 })
 
 const scrollPage = (e) =>{
-    console.log(e)
     if(scrolling == false){
         if(e > 0) // decente
         { 
@@ -94,10 +78,9 @@ const scrollPage = (e) =>{
 
                 const nextPage = allPages[allPages.indexOf(currentPage)+1]
 
-                if (nextPage == "homePage") {
-                    menu.style.opacity = "0%"
-                }else{
-                    menu.style.opacity = "100%"
+                if (nextPage != "homePage") {
+                    menu.style.display = "flex"
+                    setTimeout(()=>{menu.style.opacity = "100%"},200)
                 }
 
                 const currentPageHtml = document.getElementsByClassName(currentPage)[0]
@@ -128,8 +111,9 @@ const scrollPage = (e) =>{
                 if (nextPage == "homePage") {
                     menuCheckbox.checked = false
                     menu.style.opacity = "0%"
-                }else{
-                    menu.style.opacity = "100%"
+                    setTimeout(()=>{
+                        menu.style.display = "none"
+                    },400)
                 }
 
                 const currentPageHtml = document.getElementsByClassName(currentPage)[0]
@@ -160,3 +144,14 @@ const scrollPage = (e) =>{
     }
     
 }
+
+const toTop = document.querySelectorAll(".toTop")
+const toBot= document.querySelectorAll(".toBot")
+
+toTop.forEach((e) => {
+    e.addEventListener("click", () => {scrollPage(-1)})
+})
+
+toBot.forEach((e) => {
+    e.addEventListener("click", () => {scrollPage(1)})
+})

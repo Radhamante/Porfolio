@@ -1,4 +1,5 @@
-
+::-moz-selection { background: rgb(210, 210, 210); }
+::selection { background: rgb(210, 210, 210); }
 
 body
 {
@@ -7,16 +8,28 @@ body
     font-family: 'Poiret One', cursive;
     height: 100vh;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 .pages
 {
     display: flex;
     height: 100%;
+    transition: 0.5s;
+    position: relative;
+    animation-duration: 0.5s
 }
 
 .displayNone
 {
     display: none
+}
+/******* scroll animation *********/
+.frontToTop{
+    top: -100%
+}
+.botToFront{
+    top: 100%
 }
 
 
@@ -46,20 +59,18 @@ nav
     transition: 0.7s;
     z-index: 2;
     box-sizing: border-box;
-    /* border-left: 1px solid rgb(83, 83, 83); */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center
 }
 nav > a, nav p
 {
     text-decoration: none;
     color: black;
-    width: 100%;
+    width: max-content;
     font-size: 40px;
-    font-weight: 100;
-    animation-play-state: paused;
     margin: 10px 0;
     display: flex;
     flex-direction: column;
@@ -76,12 +87,11 @@ nav a::after,nav > p::after
 }
 nav a:hover::after,nav p:hover::after
 {
-    width: 40%
+    width: 120%
 }
 #menu_checkbox:checked ~ nav
 {
     right: 0;
-    border-color: white
 }
 
 #menu_checkbox:checked ~ section .pageRight > div
@@ -89,11 +99,6 @@ nav a:hover::after,nav p:hover::after
     transform: translate(-100%)
 }
 
-
-#menu_checkbox:checked ~ nav a
-{
-    animation-play-state: running;
-}
 .contact span
 {
     font-size: 22px;
@@ -156,6 +161,8 @@ nav a:hover::after,nav p:hover::after
     cursor: pointer;
     top: 30px;
     right: 30px;
+    transition: opacity 0.4s;
+    will-change: opacity
 }
 
 #menu_label:before, #menu_label:after, #menu_text_bar
@@ -310,23 +317,26 @@ nav a:hover::after,nav p:hover::after
 
 .pageLeftTxt
 {
+    height: max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 1;
     border: 5px solid white;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 10px 50px;
 }
 .pageLeftTxt h1
 {
-    font-size: 50px;
+    font-size: 60px;
     margin: 10px;
     text-align: center
 }
 .pageLeftTxt h2
 {
     margin: 10px;
+    font-size: 40px;
+    text-align: center;
 }
 
 .pageRightOpenButton
@@ -482,23 +492,38 @@ nav a:hover::after,nav p:hover::after
 
 /************** MainPage ******************/
 
-.homepagePageLeftImg
+/* .homepagePageLeftImg
 {
     width: 65%;
     height: 100%;
     will-change: top;
-    /* animation: moveBackgroundVertical 20s ease-in-out infinite alternate; */
+} */
+
+.homePage{
+    /* background: linear-gradient( 135deg, #fab0a086, #fd79a780); */
+    background: radial-gradient( #00000000, #00000020);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
 }
+
+.homePage .webgl{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
 
 /************** project1 ******************/
 
 
 .projet1PageLeftImg
 {
-    width: 100%;
+    /* width: 100%;
     height: min-content;
-    will-change: top;
-    animation: moveBackgroundVertical 20s ease-in-out infinite alternate;
+    animation: moveBackgroundVertical 20s ease-in-out infinite alternate; */
+    object-fit: cover;
 }
 
 /************** project2 ******************/
@@ -506,10 +531,10 @@ nav a:hover::after,nav p:hover::after
 
 .projet2PageLeftImg
 {
-    height: 100%;
+    /* height: 100%;
     width: max-content;
-    will-change: left;
-    animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate;
+    animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate; */
+    object-fit: cover;
 }
 
 /************** project3 ******************/
@@ -517,10 +542,10 @@ nav a:hover::after,nav p:hover::after
 
 .projet3PageLeftImg
 {
-    height: 100%;
+    /* height: 100%;
     width: max-content;
-    will-change: left;
-    animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate;
+    animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate; */
+    object-fit: cover;
 }
 
 /************** project4 ******************/
@@ -528,10 +553,10 @@ nav a:hover::after,nav p:hover::after
 
 .projet4PageLeftImg
 {
-    height: 100%;
+    /* height: 100%;
     width: max-content;
-    will-change: left;
-    animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate;
+    animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate; */
+    object-fit: cover;
 }
 
 /************** project5 ******************/
@@ -539,8 +564,8 @@ nav a:hover::after,nav p:hover::after
 
 .projet5PageLeftImg
 {
-    height: 100%;
-    will-change: left;
+    /* height: 100%;
     width: max-content;
-    animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate;
+    animation: moveBackgroundhorizontal 15s ease-in-out infinite alternate; */
+    object-fit: cover;
 }

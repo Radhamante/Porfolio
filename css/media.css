@@ -7,6 +7,10 @@
     body{
         overflow: visible;
     }
+    nav a:hover::after,nav p:hover::after
+    {
+        width: 0%
+    }
     .pages{
         display: flex;
         flex-direction: column-reverse
@@ -15,24 +19,39 @@
         flex-direction: column
     }
     .pageLeft{
-        width: 100%
+        width: 100%;
+        height: 50%
     }
     .pageRight{
         width: 100%;
-        height: 50%;
+        height: 70%;
     }
     .arrowBottom,.arrowTop,.arrowTopTxt,.arrowBottomTxt,.pageSeparator{
         display: none;
     }
     .pageRightTxt{
-        padding: 30px 0px
+        padding: 30px 0px;
+        border: none
+    }
+    .pageRightTxt h3{
+        font-size: 16px
+    }
+    .pageRightTxt h2{
+        font-size: 24px;
     }
     .pageLeftWeel{
         top: -100px;
         left: calc( 50% - 100px)
     }
-    .pageLeftOpenButton{
-        width: 115px;
+    .pageRightOpenButton{
+        width: 80px;
+        height: 30px;
+    }
+    .pageRightOpenButton p{
+        font-size: 16px
+    }
+    .pageRightOpenButton img{
+        height: 20px;
     }
     nav{
         position: fixed;
@@ -45,13 +64,24 @@
         top: 20px;
         right: 20px;
     }
-    .pageLeftTxt{
+    /* .pageLeftTxt{
         padding: 0
-    }
+    } */
     .pageRightBackgroundTxt{
         top: -100px
     }
     .transition{
         display: none
+    }
+}
+@media (max-width: 650px){
+    .pageLeftTxt{
+        padding: 10px
+    }
+    .pageLeftTxt h1{
+        font-size: 40px
+    }
+    .pageLeftTxt h2{
+        font-size: 24px
     }
 }
